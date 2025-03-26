@@ -1,0 +1,206 @@
+---
+title: {{name}}
+---
+
+# {{name}}
+
+{{#if natspec.title}}
+> {{natspec.title}}
+{{/if}}
+
+{{#if natspec.author}}
+**Author:** {{natspec.author}}
+{{/if}}
+
+{{#if natspec.notice}}
+> {{natspec.notice}}
+{{/if}}
+
+{{#if natspec.dev}}
+## Developer Notes
+
+{{natspec.dev}}
+{{/if}}
+
+{{#if natspec.details}}
+## Details
+
+{{{natspec.details}}}
+{{/if}}
+
+{{#if functions}}
+## Functions
+
+{{#each functions}}
+### {{name}}
+
+{{#if signature}}
+```solidity
+{{signature}}
+```
+{{/if}}
+
+{{#if natspec.notice}}
+{{natspec.notice}}
+{{/if}}
+
+{{#if natspec.dev}}
+_{{natspec.dev}}_
+{{/if}}
+
+{{#if natspec.params}}
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+{{#each params}}
+| {{name}} | {{type}} | {{{joinLines natspec}}} |
+{{/each}}
+{{/if}}
+
+{{#if natspec.returns}}
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+{{#each returns}}
+| {{#if name}}{{name}}{{else}}[{{@index}}]{{/if}} | {{type}} | {{{joinLines natspec}}} |
+{{/each}}
+{{/if}}
+
+{{/each}}
+{{/if}}
+
+{{#if modifiers}}
+## Modifiers
+
+{{#each modifiers}}
+### {{name}}
+
+{{#if signature}}
+```solidity
+{{signature}}
+```
+{{/if}}
+
+{{#if natspec.notice}}
+{{natspec.notice}}
+{{/if}}
+
+{{#if natspec.dev}}
+_{{natspec.dev}}_
+{{/if}}
+
+{{#if natspec.params}}
+#### Parameters
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+{{#each natspec.params}}
+| {{name}} | {{type}} | {{description}} |
+{{/each}}
+{{/if}}
+
+{{/each}}
+{{/if}}
+
+{{#if structs}}
+## Structs
+
+{{#each structs}}
+### {{name}}
+
+{{#if natspec.notice}}
+{{natspec.notice}}
+{{/if}}
+
+{{#if natspec.dev}}
+_{{natspec.dev}}_
+{{/if}}
+
+{{#if natspec.details}}
+#### Details
+
+{{{natspec.details}}}
+{{/if}}
+
+{{#if members}}
+#### Members
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+{{#each members}}
+| {{name}} | {{type}} | {{description}} |
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{#if events}}
+## Events
+
+{{#each events}}
+### {{name}}
+
+{{#if signature}}
+```solidity
+{{signature}}
+```
+{{/if}}
+
+{{#if natspec.notice}}
+{{natspec.notice}}
+{{/if}}
+
+{{#if natspec.dev}}
+_{{natspec.dev}}_
+{{/if}}
+
+{{#if natspec.params}}
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+{{#each natspec.params}}
+| {{name}} | {{type}} | {{description}} |
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{#if errors}}
+## Custom Errors
+
+{{#each errors}}
+### {{name}}
+
+{{#if signature}}
+```solidity
+{{signature}}
+```
+{{/if}}
+
+{{#if natspec.notice}}
+{{natspec.notice}}
+{{/if}}
+
+{{#if natspec.dev}}
+_{{natspec.dev}}_
+{{/if}}
+
+{{#if natspec.params}}
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+{{#each natspec.params}}
+| {{name}} | {{type}} | {{description}} |
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{#if source.file}}
+## Source
+
+{{source.file}}:{{source.line}}
+{{/if}}
