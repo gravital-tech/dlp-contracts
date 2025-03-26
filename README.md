@@ -11,6 +11,12 @@
   </p>
 </div>
 
+---
+
+**Note:** This repository is under active development and likely has many bugs/inconsistencies. We welcome reporting them.
+
+---
+
 ## Overview
 
 The **Dispersion Launch Protocol (DLP)** is a groundbreaking framework for token distribution in decentralized systems. DLP solves the token distribution problem through game-theoretic incentives, creating systems where fair distribution emerges naturally from economic incentives rather than arbitrary restrictions.
